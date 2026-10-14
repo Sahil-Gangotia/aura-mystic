@@ -1,0 +1,49 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh; 
+}
+
+.home-page-wrapper {
+    background-image: url("https://tse1.mm.bing.net/th/id/OIP.j7yNV2psWUUVbxOwGw2KewHaDt?pid=Api&P=0&h=1800");
+    
+
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    min-height: 100vh;
+    width: 100%;
+}
+.home-page-wrapper > * {
+    background: transparent !important;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .nav-btns {
+    width: 100%;
+    justify-content: center; 
+    gap: 10px;
+  }
+  
+  .signin, .signup {
+    width: 120px; 
+    padding: 8px 15px;
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN SECTION - Fixed Top Padding taaki Fixed Navbar ke piche na chupe */
+.about-section {
+    width: 100%;
+    min-height: 80vh;
+    background: #0f0f0f;
+    color: #fff;
+    padding: 120px 8% 80px 8%; /* Top padding 120px kiya hai responsive ke liye */
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CONTAINER - Grid layout smooth response ke liye */
+.about-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+.about-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.card {
+    border: none !important;
+    overflow: hidden;
+    border-radius: 30px !important;
+    background: #111;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+    width: 100%;
+}
+
+.card-img, .about-img {
+    width: 100%;
+    height: auto;
+    min-height: 400px; 
+    max-height: 550px;
+    object-fit: cover;
+    filter: brightness(65%);
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    border-radius: 25px;
+}
+
+.card:hover .card-img, 
+.about-image-wrapper:hover .about-img {
+    transform: scale(1.04);
+}
+
+/* CARD TEXT OVERLAY */
+.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px !important;
+    background: linear-gradient(
+        to right,
+        rgba(0,0,0,0.8),
+        rgba(0,0,0,0.3)
+    );
+}
+
+/* BADGE STYLING */
+.about-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    z-index: 2;
+}
+
+/* CONTENT TEXT STYLING */
+.about-content {
+    width: 100%;
+}
+
+.about-tagline {
+    color: #d4af37;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-heading {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 15px 0;
+    font-weight: 700;
+}
+
+.about-heading span {
+    color: #d4af37;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.about-description {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #d3d3d3;
+    margin-bottom: 25px;
+}
+
+/* HIGHLIGHTS SECTION */
+.about-highlights {
+    display: flex;
+    gap: 20px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 18px;
+    flex: 1;
+    min-width: 200px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.4s ease;
+}
+
+.highlight-item:hover {
+    transform: translateY(-5px);
+    background: #222;
+}
+
+.highlight-item h4 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.highlight-item p {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.about-explore-btn {
+    padding: 14px 35px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(135deg, #d4af37, #f5d76e);
+    color: #111;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.about-explore-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.5);
+}
+
+/* ========================================================
+   CLEAN RESPONSIVE MEDIA QUERIES (For All Screens)
+   ======================================================== */
+
+/* 1. Tablets & Medium Screens (Laptops se niche) */
+@media (max-width: 992px) {
+    .about-container {
+        grid-template-columns: 1fr; /* Image upar, text niche auto-wrap ho jayega */
+        gap: 40px;
+    }
+    
+    .about-heading {
+        font-size: 36px;
+    }
+
+    .card-img, .about-img {
+        min-height: 350px; /* Tablet par height manage karne ke liye */
+    }
+}
+
+/* 2. Small Mobile Views */
+@media (max-width: 576px) {
+    .about-section {
+        padding: 100px 5% 50px 5%; /* Padding choti screen ke hisab se optimize */
+    }
+
+    .about-heading {
+        font-size: 28px;
+    }
+
+    .card-title {
+        font-size: 28px;
+    }
+
+    .card-img-overlay {
+        padding: 20px !important; /* Text overflow nahi hoga overlay se */
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+
+    .about-highlights {
+        flex-direction: column; /* Highlights ek ke niche ek aayenge mobile par */
+        gap: 15px;
+    }
+    
+    .card-img, .about-img {
+        min-height: 28px;
+        height: 300px; /* Mobile screen par photo collapse nahi hogi */
+    }
+}
